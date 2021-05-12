@@ -1,0 +1,27 @@
+dceuq e n'ehfp cg p'kyhhep uqfw cgiy citudm c gzudiq ni ezhd px c jhptv ep cggsht. kg hdtymdt xdzei gdx rzyq wir mvzxpw, cifcchdb znwd ccyw wy lkcsht, dp isgd uqfw wy ?
+  a   a l         a               e         a       le          a                                e           e           e                               e                                                                
+clezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclezclez     
+
+indice du texte précédent : ".... le MOT DE PASSE de taille inconnue et qui CONTIENT la CLE"
+on sait que la clé se répète donc ??? mot de passe = cle ??
+vu que l'on est en modulo 26 l'espace manquant ne peut qu'être une des 26 lettres de l'alphabet : par force brute on trouve "z" donc cle = clez
+
+
+*je sais où placer les "a" car c'est la seule lettre pouvant être seule ici (a ou à)
+
+*grâce à l'indice on sait que c'est très certainement un chiffrage avec le chiffre de Vigenère :
+
+dceuq e n'ehfp cg p'kyhhep uqfw cgiy citudm c gzudiq ni ezhd px c jhptv ep cggsht. kg hdtymdt xdzei gdx rzyq wir mvzxpw, cifcchdb znwd ccyw wy lkcsht, dp isgd uqfw wy ?
+bravo t j'fful de e'gzfwaq sfbx avez axpvbb y hxjzjo ce fxwz qv r finir fn rchqwp. le wzuwbzu vsvfg vzy pour uxn ntotqu, regardez ojxb ryzu lu miroir, sl jqvz vous xw ?
+-----
+seul "bravo" est lisible donc on peut s'en servir de base pour craquer le code :
+
+Si "dceuq" donne "bravo" / etant en modulo 26 : de "d" à "b" ---> d = 3 soit le rang de "d" en modulo 26 , auquel on soustrait le rang c de la clé(clez) soit 3-2 = 1 donc b = 1
+de même avec les autres lettres de l'alphabet (toujours en modulo 26)
+rang de la lettre - rang de la clé 
+x = 23 - 4 = 19 = t ......
+
+... ect .... (on s'aide d'un diagramme de Vigenère, (ou d'un code mais j'ai fait à la main))
+
+on obtient le code suivant :
+"bravo a l'aide de l'indice vous avez reussi a casser ce code et a finir ce devoir. le dernier texte est pour les braves, regardez vous dans un miroir, en etes vous un ?"
